@@ -52,6 +52,8 @@ tunings = ["1000.00",
 #tunings = ["3000.00"]
 sources = ["casa"]
 #           "moon"]
+#         "virgoa"]
+#           "taua"]
 
 #sources = ["moon"]
 
@@ -196,7 +198,11 @@ for antenna in antennas:
 				sourceflux = 1.38 * 10**-23 * 270 / ((3 * 10**8) / (float(tuning) * 10**6))**2 * (6.67*10**-5)/ (10**-26)
 			if source == "casa":
 				sourceflux = 250034 * float(tuning)**-0.667
-			print sourceflux
+			if source == "virgoa":
+				sourceflux = 39810.7 * float(tuning)**-0.75
+			if source == "taua":
+				sourceflux =  6309.6 * float(tuning)**-0.25				
+				print sourceflux
 			if len(power0) > 2:
 				#print ratio0
 				ratio = 1/(ratio0 / (float(goodcnt0)))
